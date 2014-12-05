@@ -13,6 +13,9 @@
 		D30B2E381A2A5DC1007D5DCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30B2E371A2A5DC1007D5DCE /* Images.xcassets */; };
 		D30B2E3B1A2A5DC1007D5DCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30B2E391A2A5DC1007D5DCE /* LaunchScreen.xib */; };
 		D30B2E471A2A5DC1007D5DCE /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B2E461A2A5DC1007D5DCE /* ToDoListTests.swift */; };
+		D37E66681A2AF40F000496DE /* XYZAddToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E66671A2AF40F000496DE /* XYZAddToDoItemViewController.swift */; };
+		D37E666A1A2AF71C000496DE /* XYZToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E66691A2AF71C000496DE /* XYZToDoListTableViewController.swift */; };
+		D37E666C1A2BD1FF000496DE /* XYZToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E666B1A2BD1FE000496DE /* XYZToDoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		D30B2E401A2A5DC1007D5DCE /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30B2E451A2A5DC1007D5DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D30B2E461A2A5DC1007D5DCE /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
+		D37E66671A2AF40F000496DE /* XYZAddToDoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYZAddToDoItemViewController.swift; sourceTree = "<group>"; };
+		D37E66691A2AF71C000496DE /* XYZToDoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYZToDoListTableViewController.swift; sourceTree = "<group>"; };
+		D37E666B1A2BD1FE000496DE /* XYZToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYZToDoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,9 @@
 				D30B2E301A2A5DC1007D5DCE /* AppDelegate.swift */,
 				D30B2E321A2A5DC1007D5DCE /* ViewController.swift */,
 				D30B2E341A2A5DC1007D5DCE /* Main.storyboard */,
+				D37E66691A2AF71C000496DE /* XYZToDoListTableViewController.swift */,
+				D37E666B1A2BD1FE000496DE /* XYZToDoItem.swift */,
+				D37E66671A2AF40F000496DE /* XYZAddToDoItemViewController.swift */,
 				D30B2E371A2A5DC1007D5DCE /* Images.xcassets */,
 				D30B2E391A2A5DC1007D5DCE /* LaunchScreen.xib */,
 				D30B2E2E1A2A5DC1007D5DCE /* Supporting Files */,
@@ -156,6 +165,7 @@
 		D30B2E231A2A5DC1007D5DCE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = XYZ;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Nima Sepehr";
 				TargetAttributes = {
@@ -213,7 +223,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D30B2E331A2A5DC1007D5DCE /* ViewController.swift in Sources */,
+				D37E66681A2AF40F000496DE /* XYZAddToDoItemViewController.swift in Sources */,
 				D30B2E311A2A5DC1007D5DCE /* AppDelegate.swift in Sources */,
+				D37E666C1A2BD1FF000496DE /* XYZToDoItem.swift in Sources */,
+				D37E666A1A2AF71C000496DE /* XYZToDoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +418,7 @@
 				D30B2E4C1A2A5DC1007D5DCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D30B2E4D1A2A5DC1007D5DCE /* Build configuration list for PBXNativeTarget "ToDoListTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +427,7 @@
 				D30B2E4F1A2A5DC1007D5DCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
