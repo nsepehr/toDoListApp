@@ -9,8 +9,9 @@
 import UIKit
 
 class XYZToDoItem: NSObject {
-    var itemName: String?
-    var completed: Bool?
-    let creationDate: NSDate?
+    var itemName: String!
+    var completed: Bool!
+    var creationDate: NSDate!
+    var compDate: NSDate!
     
 }

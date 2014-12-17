@@ -13,6 +13,8 @@
 		D30B2E381A2A5DC1007D5DCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30B2E371A2A5DC1007D5DCE /* Images.xcassets */; };
 		D30B2E3B1A2A5DC1007D5DCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30B2E391A2A5DC1007D5DCE /* LaunchScreen.xib */; };
 		D30B2E471A2A5DC1007D5DCE /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B2E461A2A5DC1007D5DCE /* ToDoListTests.swift */; };
+		D330C0991A3D78AB00D8A494 /* XYZTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330C0981A3D78AB00D8A494 /* XYZTaskTableViewCell.swift */; };
+		D33B5FB51A3EB17D0068AE29 /* XYZAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B5FB41A3EB17D0068AE29 /* XYZAppData.swift */; };
 		D37E66681A2AF40F000496DE /* XYZAddToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E66671A2AF40F000496DE /* XYZAddToDoItemViewController.swift */; };
 		D37E666A1A2AF71C000496DE /* XYZToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E66691A2AF71C000496DE /* XYZToDoListTableViewController.swift */; };
 		D37E666C1A2BD1FF000496DE /* XYZToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E666B1A2BD1FE000496DE /* XYZToDoItem.swift */; };
@@ -39,6 +41,8 @@
 		D30B2E401A2A5DC1007D5DCE /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30B2E451A2A5DC1007D5DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D30B2E461A2A5DC1007D5DCE /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
+		D330C0981A3D78AB00D8A494 /* XYZTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYZTaskTableViewCell.swift; sourceTree = "<group>"; };
+		D33B5FB41A3EB17D0068AE29 /* XYZAppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYZAppData.swift; sourceTree = "<group>"; };
 		D37E66671A2AF40F000496DE /* XYZAddToDoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYZAddToDoItemViewController.swift; sourceTree = "<group>"; };
 		D37E66691A2AF71C000496DE /* XYZToDoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYZToDoListTableViewController.swift; sourceTree = "<group>"; };
 		D37E666B1A2BD1FE000496DE /* XYZToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYZToDoItem.swift; sourceTree = "<group>"; };
@@ -83,11 +87,13 @@
 		D30B2E2D1A2A5DC1007D5DCE /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				D33B5FB41A3EB17D0068AE29 /* XYZAppData.swift */,
 				D30B2E301A2A5DC1007D5DCE /* AppDelegate.swift */,
 				D30B2E321A2A5DC1007D5DCE /* ViewController.swift */,
 				D30B2E341A2A5DC1007D5DCE /* Main.storyboard */,
-				D37E66691A2AF71C000496DE /* XYZToDoListTableViewController.swift */,
 				D37E666B1A2BD1FE000496DE /* XYZToDoItem.swift */,
+				D330C0981A3D78AB00D8A494 /* XYZTaskTableViewCell.swift */,
+				D37E66691A2AF71C000496DE /* XYZToDoListTableViewController.swift */,
 				D37E66671A2AF40F000496DE /* XYZAddToDoItemViewController.swift */,
 				D30B2E371A2A5DC1007D5DCE /* Images.xcassets */,
 				D30B2E391A2A5DC1007D5DCE /* LaunchScreen.xib */,
@@ -226,6 +232,8 @@
 				D37E66681A2AF40F000496DE /* XYZAddToDoItemViewController.swift in Sources */,
 				D30B2E311A2A5DC1007D5DCE /* AppDelegate.swift in Sources */,
 				D37E666C1A2BD1FF000496DE /* XYZToDoItem.swift in Sources */,
+				D330C0991A3D78AB00D8A494 /* XYZTaskTableViewCell.swift in Sources */,
+				D33B5FB51A3EB17D0068AE29 /* XYZAppData.swift in Sources */,
 				D37E666A1A2AF71C000496DE /* XYZToDoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

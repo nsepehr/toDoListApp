@@ -9,8 +9,18 @@
 import UIKit
 
 class XYZToDoListTableViewController: UITableViewController {
-
+    
     var toDoItem: [XYZToDoItem] = []
+    
+    let dateFormat: NSDateFormatterStyle = .ShortStyle
+    let timeFormat: NSDateFormatterStyle = .ShortStyle
+    var myFormatter: NSDateFormatter {
+        let format = NSDateFormatter()
+        format.dateStyle = dateFormat
+        format.timeStyle = timeFormat
+        return format
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +34,14 @@ class XYZToDoListTableViewController: UITableViewController {
     }
     
     func loadInitialData() {
+        println("Loading initial data")
         // Function load some data into array toDoItem
-        var item1 = XYZToDoItem()
-        item1.itemName = "Buy milk"
+        let item1: XYZToDoItem = XYZToDoItem()
+        item1.itemName = "Task1"
+        item1.creationDate = NSDate()
+        item1.compDate = NSDate()
+        item1.completed = false
         self.toDoItem.append(item1)
-        var item2 = XYZToDoItem()
-        item2.itemName = "Buy eggs"
-        self.toDoItem.append(item2)
-        var item3 = XYZToDoItem()
-        item3.itemName = "Learn iOS"
-        self.toDoItem.append(item3)
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,22 +59,60 @@ class XYZToDoListTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return self.toDoItem.count
+        var myCount: Int = self.toDoItem.count
+        println("Count of my cells are \(myCount)")
+        return myCount
     }
 
-    @IBAction func unwindToList(segue: UIStoryboardSegue) {
+    @IBAction func unwindToList(seque: UIStoryboardSegue) {
         // Left empty for now
-        //println("Im unwinding")
+        println("Im unwinding")
+        let source: XYZAddToDoItemViewController = seque.sourceViewController as XYZAddToDoItemViewController
+        let myItem = source.newItem
+
+        if myItem.itemName == nil{
+            return
+        }
+        println("my return text field is \(myItem.itemName)")
+        self.toDoItem.append(myItem)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ListPrototypeCell", forIndexPath: indexPath) as UITableViewCell
+        println("Inside cellForRowAtIndexPath")
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListPrototypeCell", forIndexPath: indexPath) as XYZTaskTableViewCell
 
         // Configure the cell...
         var toDoItem = self.toDoItem[indexPath.row]
-        cell.textLabel.text = toDoItem.itemName
+        cell.taskLabel.text = toDoItem.itemName
+        var taskDate: NSDate = toDoItem.creationDate
+        var dateString: String! = myFormatter.stringFromDate(taskDate)
+        cell.dateLabel.text = dateString
+        if toDoItem.completed == true {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            var compDate: NSDate = toDoItem.compDate
+            var compDateString = myFormatter.stringFromDate(compDate)
+            cell.compDate.text = compDateString
+            cell.compDate.hidden = false
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.compDate.hidden = true
+        }
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) ->() {
+        println("Inside didSelectRowAtIndex")
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        self.toDoItem[indexPath.row].completed = !self.toDoItem[indexPath.row].completed
+        if self.toDoItem[indexPath.row].completed == true {
+            self.toDoItem[indexPath.row].compDate = NSDate()
+        }
+        // Debug
+        println("Selected row is: \(indexPath.row)")
+        // End of debug
+        var myPathArray: NSArray = [indexPath]
+        tableView.reloadRowsAtIndexPaths(myPathArray, withRowAnimation: .None)
     }
 
     /*
