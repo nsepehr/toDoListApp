@@ -50,7 +50,7 @@ class XYZAppData: NSObject {
         var error: NSError? = nil
         var documentHandler = NSFileManager.defaultManager()
         var thisString: String = "Write this to file and read"
-        thisString.writeToFile(dataFile.path!, atomically: false, encoding: NSStringEncodingConversionOptions.AllowLossy.rawValue, error: &error)
+        thisString.writeToFile(dataFile.path!, atomically: false, encoding: NSUTF8StringEncoding, error: &error)
 //        thisString.writeToURL(dataFile, atomically: true, encoding: NSStringEncoding(), error: &error)
         if (error != nil) {
             println("Unable to write to file: \(error?.localizedDescription)")
@@ -58,7 +58,17 @@ class XYZAppData: NSObject {
         //if documentHandler {
         //    println("File successfully created at \(dataFile.path) ")
         //}
-        
+    }
+    
+    func readFromDataFile(dataFile: NSURL) {
+        var error: NSError? = nil
+        println("Inside read data file, my file is: \(dataFile.path) ")
+        var file: String! = dataFile.path
+        var fileContent: NSArray = NSArray(contentsOfFile: file) as [String]
+//        var fileContent: NSArray = NSArray(contentsOfURL: dataFile) as [String]
+        //for var i = 0; i < fileContent.count; i++ {
+        //    println("My line is: \(fileContent[i]) ")
+        //}
     }
     
     func printHomeDir() {
@@ -68,7 +78,7 @@ class XYZAppData: NSObject {
         var myDataFile: NSURL = self.applicationDataFile(myDataDir)
         println("My application data file is: \(myDataFile.path) ")
         self.writeToDataFile(myDataFile)
+        self.readFromDataFile(myDataFile)
     }
-    
    
 }
